@@ -7,11 +7,11 @@
 </head>
 <body>
 <form action="main_coords.php" method="post">
-					Цвет
-					<input type="checkbox" name="Red" value="Red" />Красный<br />
-					<input type="checkbox" name="Blue" value="Blue" />Синий<br />
-					<input type="submit" name="formSubmit" value="Submit" />
-				</form> 
+	Цвет
+	<input type="checkbox" name="Red" value="Red" />Красный<br /> //тут добавил чек боксы
+	<input type="checkbox" name="Blue" value="Blue" />Синий<br />
+	<input type="submit" name="formSubmit" value="Submit" />
+</form> 
 <?php
 //header ("Content-type: image/png");
 
@@ -37,7 +37,6 @@ echo "X=$foo_x, Y=$foo_y ";
                 echo "  <input type=\"image\" alt=' Finding coordinates of an image' src=\"image001.jpg\" name=\"foo\"/>";
             }
             ?>
-
 
         </form>
 
@@ -66,26 +65,19 @@ echo "X=$foo_x, Y=$foo_y ";
                 $distance_X=abs($array_X[$i]-$array_X[$i-1]);
                 $distance_Y=abs($array_Y[$i]-$array_Y[$i-1]);
                 				
-			
-					  
-					  					  
-					if(isset($_POST['Red']) && $_POST['Red'] == 'Red'){
+		if(isset($_POST['Red']) && $_POST['Red'] == 'Red'){
 
-                        print "<div style='position: absolute; top: <?php echo$array_Y[$i]-8?>px; left: <?echo $array_X[$i]-8?>px'>
-                            <img class = 'dot' src='red_dot.png' />
+                  print "<div style='position: absolute; top: <?php echo$array_Y[$i]-8?>px; left: <?echo $array_X[$i]-8?>px'>
+                         <img class = 'dot' src='red_dot.png' />
                         </div>"; //вот тут беда с экранированием
 
                     }
-						
-					elseif(isset($_POST['Blue']) && $_POST['Blue'] == 'Blue'){
-
-
-						print "<div style='position: absolute; top: <?phph echo$array_Y[$i]-8?>px; left: <?echo $array_X[$i]-8?>px'>
-							<img class = 'dot' src='blue_dot.png' />
-						</div>"; //вот тут беда с экранированием
-				    }
+		elseif(isset($_POST['Blue']) && $_POST['Blue'] == 'Blue'){
+			print "<div style='position: absolute; top: <?phph echo$array_Y[$i]-8?>px; left: <?echo $array_X[$i]-8?>px'>
+				<img class = 'dot' src='blue_dot.png' />
+				</div>"; //вот тут беда с экранированием
+		}
             
-
             $i++;
 
             }
